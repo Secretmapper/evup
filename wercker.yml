@@ -1,0 +1,16 @@
+box: node
+build:
+  steps:
+    - npm-install
+    - npm-test
+    - hgen/gulp:
+       tasks: deploy
+    - arjen/hugo-build:
+        disable_pygments: true
+        version: 0.14
+deploy:
+  steps:
+    - lukevivier/gh-pages@0.2.1:
+        token: $GIT_TOKEN
+        domain: updevcamp.com
+        basedir: public

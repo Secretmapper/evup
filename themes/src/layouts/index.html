@@ -1,0 +1,98 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<div class="container content">
+  <section class="front-banner">
+    <h1>EVUP</h1>
+    <h4>EVents in UP, leveled UP</h4>
+    <div class="evup-app">
+      <div class="evup-about card-1">
+        <img src="media/imgs/innov.png"/>
+        <div class="card-3-content">
+          <h2>HackUP</h2>
+          <p>
+          Code the next revolutionary application!
+          </p>
+        </div>
+        <div class="card-3-bar">
+          <p>
+          November 15, 2015
+          </p>
+          <div class="card-bar-action">
+            <div class="card-bar-action-check">
+              &#10003
+            </div>
+            <div class="card-bar-action-cross">
+              &#10005
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="evup-about card-2">
+        <img src="media/imgs/innov.png"/>
+        <div class="card-3-content">
+          <h2>HackUP</h2>
+          <p>
+          Code the next revolutionary application!
+          </p>
+        </div>
+        <div class="card-3-bar">
+          <p>
+          November 15, 2015
+          </p>
+          <div class="card-bar-action">
+            <div class="card-bar-action-check">
+              &#10003
+            </div>
+            <div class="card-bar-action-cross">
+              &#10005
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="evup-about card-3">
+        <img src="media/imgs/innov.png"/>
+        <div class="card-3-content">
+          <h2>HackUP</h2>
+          <p>
+          Code the next revolutionary application!
+          </p>
+        </div>
+        <div class="card-3-bar">
+          <p>
+          November 15, 2015
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <h1>Find what you're interested in</h1>
+    <div class="evup-app evup-app-2">
+      <div class="evup-row">
+        <h1>Skill</h1>
+      </div>
+      <div class="evup-row">
+        <h1>App's Orientation</h1>
+      </div>
+      <div class="evup-row">
+        <h1>Freebies</h1>
+      </div>
+      <div class="evup-row">
+        <h1>Contest</h1>
+      </div>
+      <div class="evup-row">
+        <h1>Review</h1>
+      </div>
+      <div class="evup-row">
+        <h1>Jobs</h1>
+      </div>
+    </div>
+  {{ range where .Data.Pages.ByDate "Section" "front"}}
+  <h2>{{ .Title }}</h2>
+
+  {{ .Content }}
+  {{ end }}
+
+</div>
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}

@@ -1,0 +1,17 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<div class="content container">
+  <ul class="posts">
+  {{ range .Data.Pages }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ if isset .Params "categories" }}
+    &middot;
+    {{ $BaseURL := .Site.BaseURL }}
+    {{ range .Params.categories }}<a class="label" href="{{ $BaseURL }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+    {{ end }}</span>
+    &middot; <time>{{ .Date.Format "Jan 2, 2006" }}</time></li>
+  {{ end }}
+  </ul>
+</div>
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}

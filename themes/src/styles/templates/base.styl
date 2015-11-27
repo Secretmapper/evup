@@ -1,0 +1,128 @@
+@require "jeet"
+
+html, body
+  height 100%
+
+html
+  position relative
+  min-height 100%
+  
+body
+  margin 0
+  font-family font_main
+  font-weight 400
+  font-size 15px
+  background-color bg_color
+  display table
+  table-layout fixed
+  width 100%
+
+.page-row
+  display table-row
+  height 1px
+
+header, .container
+  max-width md_size
+  width 90%
+  margin 0 auto
+
+header
+  margin 20px auto
+  display none
+  h1
+    display inline-block
+    margin 0
+    a
+      color text_color
+      &:visited
+        color text_color
+  nav
+    display inline-block
+    float right
+    li
+      display block
+      float left
+      padding-right 2em
+      list-style-type none
+      &:last-child
+        padding-right 0
+  a, a:visited
+    color csi_color
+    text-decoration none
+
+article
+  width 100%
+  p, ul, li, a
+    font-family font_article
+  li
+    padding-bottom 1em
+  figure
+    text-align center
+    img
+      max-width 100%
+
+.toc li
+  padding-bottom 0
+
+.content
+  padding-bottom 20px
+
+.main-wrapper
+  @extend .page-row
+  height 100%
+  max-width 90%
+  animation-duration: 0.15s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  animation-name fadeIn
+  &.is-exiting
+    animation-direction alternate-reverse
+
+footer
+  @extend .page-row
+  background-color accent_color
+  text-align center
+  margin-top 2em
+  p
+    padding 10px
+    margin 0
+
+p 
+  color text_color
+
+a
+  color csi_color
+  text-decoration none
+  &:visited
+    color visited_color 
+
+.container
+  margin 0 auto
+  width 90%
+
+.color-csi
+  color csi_color
+
+.color-pink
+  color pink_color
+  
+pre
+  display inline-block
+  overflow auto
+  width 100%
+  code
+    width 100%
+  //white-space: pre-wrap; /* css-3 */    
+  //white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  //white-space: -pre-wrap; /* Opera 4-6 */    
+  //white-space: -o-pre-wrap; /* Opera 7 */    
+  //word-wrap: break-word; /* Internet Explorer 5.5+ */
+
+//@media (min-width sm_size)
+//@media (min-width md_size)
+//@media (min-width lg_size)
+
+.content-fade
+  opacity: 0;
+  transform matrix(0.85, 0, 0, 0.85, 0, 0)
+  transition all 1000ms
