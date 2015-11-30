@@ -5,71 +5,32 @@
     <h1>EVUP</h1>
     <h4>EVents in UP, leveled UP</h4>
     <div class="evup-app">
-      <div class="evup-about card-1">
-        <img src="media/imgs/innov.png"/>
-        <div class="card-3-content">
-          <h2>HackUP</h2>
-          <p>
-          Code the next revolutionary application!
-          </p>
+      {{ range $.Site.Data.events }}
+      <div class="evup-card">
+        <img class="card-image" src="media/imgs/{{ .img }}.png"/>
+        <div class="card-content">
+          <h2>{{ .name }}</h2>
+          <p>{{ .event }}</p>
         </div>
-        <div class="card-3-bar">
-          <p>
-          November 15, 2015
-          </p>
-          <div class="card-bar-action">
-            <div class="card-bar-action-check">
-              &#10003
-            </div>
-            <div class="card-bar-action-cross">
-              &#10005
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="evup-about card-2">
-        <img src="media/imgs/innov.png"/>
-        <div class="card-3-content">
-          <h2>HackUP</h2>
-          <p>
-          Code the next revolutionary application!
-          </p>
-        </div>
-        <div class="card-3-bar">
-          <p>
-          November 15, 2015
-          </p>
-          <div class="card-bar-action">
-            <div class="card-bar-action-check">
-              &#10003
-            </div>
-            <div class="card-bar-action-cross">
-              &#10005
-            </div>
-          </div>
+        <div class="card-bar">
+          <p>{{ .date }}</p>
         </div>
       </div>
-      <div class="evup-about card-3">
-        <img src="media/imgs/innov.png"/>
-        <div class="card-3-content">
-          <h2>HackUP</h2>
-          <p>
-          Code the next revolutionary application!
-          </p>
-        </div>
-        <div class="card-3-bar">
-          <p>
-          November 15, 2015
-          </p>
-        </div>
+      {{ end }}
+      <div class="actions">
+        <div class="discover">Discover</div>
+        <div class="">Manage</div>
+        <div class="">Map</div>
       </div>
     </div>
   </section>
-  <h1>Find what you're interested in</h1>
-    <div class="evup-app evup-app-2">
+  <h1 class="blockquote">
+    It's like Tinder, for Events
+  </h1>
+  <div class="front-row">
+    <div class="evup-app evup-app-2 front-img">
       <div class="evup-row">
-        <h1>Skill</h1>
+        <h1>Skill Training</h1>
       </div>
       <div class="evup-row">
         <h1>App's Orientation</h1>
@@ -84,15 +45,60 @@
         <h1>Review</h1>
       </div>
       <div class="evup-row">
-        <h1>Jobs</h1>
+        <h1>Show</h1>
+      </div>
+      <div class="evup-row">
+        <h1>Shop/Fair</h1>
       </div>
     </div>
-  {{ range where .Data.Pages.ByDate "Section" "front"}}
-  <h2>{{ .Title }}</h2>
+    <div class="front-details">
+      <h1>Find events relevant to you</h1>
+      <p>Interested in Contests? Applicant Orientations? Freebies?</p>
+      <p>Through Smart Filters, you're never going to miss events relevant to you again!</p>
+    </div>
+  </div>
+  <div class="front-row">
+    <div class="front-details-left">
+      <h1>All events, all in one app</h1>
+      <p>Interested in Contests? Applicant Orientations? Freebies?</p>
+      <p>Through Smart Filters, you're never going to miss events relevant to you again!</p>
+    </div>
+    <div class="evup-app evup-app-3 front-img-right">
+      {{ range $.Site.Data.events }}
+      <div class="evup-row">
+        <small>{{ .date }}</small><br>
+        <h2>{{ .name }}</h2>
+        <small class="evup-row-time">4:00-5:30</small>
+      </div>
+      {{end}}
+      {{ range seq 16 }}
+      <div class="evup-row">
+        <small>Jan 1, 2015</small><br>
+        <h2>[Your Event]</h2>
+        <small class="evup-row-time">3:30-4:50</small>
+      </div>
+      {{end}}
+      <div class="evup-row">
+        <small>Feb 14, 2014</small><br>
+        <h2>Blind Date ;)</h2>
+        <small class="evup-row-time">all-day</small>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="margin: 0 auto">
+      <h1 style="text-align:center">Coming Soon...</h1>
+      <small style="width:100%;display:block;text-align:center">around AY 2016 for iOS, then Android*</small>
+    </div>
+    <p>I'm currently finalizing the event list and <b>looking for more organizations to partner with</b>. If you (or someone you know) is interested, message me here:</p>
+    {{ partial "formspree" }}
+    <p>You can also use the form if you have any questions/suggestions about the app. Or if you just want someone to talk to, I don't bite (that much). If you are an <b>artist</b> it would be great if you can contact me and develop a logo for EVUP and RUPP. I have artists outside of UP, but it'd be poetic if the logo was also done by a UP student don't you think?</p>
+    <p>Place your email here and I'll let you know once the app is done:</p>
+    {{ partial "mailchimp" }}
+    <p>Guess what! I'm a <a href="http://rupp.herokuapp.com">2nd Year Student</a> Now! Go Batch 2014!</p>
 
-  {{ .Content }}
-  {{ end }}
-
+    <small><i>*I'll probably make at least the events list available on the web too, but it won't be as robust as the apps</i></small>
+  </div>
 </div>
 {{ partial "footer.html" . }}
 {{ partial "foot.html" . }}
