@@ -1,14 +1,9 @@
 baseurl = "evup.updevcamp.com"
 languageCode = "en-us"
-title = "UP CSI Devcamp"
+title = "EVUP"
 pygmentsstyle = "colorful"
 
-[taxonomies]
-  tracks = "tracks"
-  tracks-desc = "tracks-desc"
-  author = "authors"
-
 [params]
-  defaultDescription = "CSI Devcamp provides a space and network for motivated students to learn and create awesome stuff"
-  defaultKeywords = "Devcamp, UP, CSI, Computer, Science, UP CSI Devcamp, Bootcamp, Mentorship, Mentor, Mentee"
+  defaultDescription = "EVUP is the premier event app for UP Diliman"
+  defaultKeywords = "UP, Computer, Science, Events, Event, App, iOS, Android"
   googleAnalytics = "UA-69207349-1"
