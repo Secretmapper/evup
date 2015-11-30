@@ -1,4 +1,4 @@
-baseurl = "evup.updevcamp.com"
+baseurl = "http://evup.updevcamp.com"
 languageCode = "en-us"
 title = "EVUP"
 pygmentsstyle = "colorful"
