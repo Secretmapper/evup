@@ -12,5 +12,5 @@ deploy:
   steps:
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
-        domain: updevcamp.com
+        domain: evup.updevcamp.com
         basedir: public
