@@ -31,6 +31,7 @@
 
   <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
   <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
+  <meta property="og:image" content="/media/imgs/evup.png"/>  
   {{ with .Site.Params.googleAuthorship }}<link rel="author" href="http://plus.google.com/{{ . }}">{{ end }}
 </head>
 <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
